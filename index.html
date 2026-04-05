@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="splash" class="splash">
+        <img src="assets/N.webp" alt="Netflix N">
+    </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+        <!-- Header com logo Netflix -->
+        <header class="netflix-header">
+            <div class="netflix-logo">NETFLIX</div>
+        </header>
+        <main>
+            <h1>QUEM ESTÁ ASSISTINDO?</h1>
+            <section aria-label="Perfis disponiveis">
+                <ul class="profiles">
+                    <li>
+                        <a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/Belloti cartoon.png" alt="Perfil do belloti">
+                                <figcaption>Belloti</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/Lele cartoon.png" alt="Perfil da lele">
+                                <figcaption>Lele</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="catalogo/catalogo.html" class="profile">
+                            <figure>
+                                <img src="/assets/Bento cartoon.png" alt="Perfil do bentinho">
+                                <figcaption>Bentinho</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <button class="profile add-profile" aria-label="Adicionar perfil">
+                            <figure>
+                                <div class="add-icon">+</div>
+                                <figcaption>Adicionar perfil</figcaption>
+                            </figure>
+                        </button>
+                    </li>
+                </ul>
+                <button class="manage-profiles">Gerenciar Perfils</button>
+            </section>
+        </main>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"> </script>
+</body>
+</html>

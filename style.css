@@ -1,0 +1,250 @@
+/* Estilos inspirados na Netflix */
+
+:root {
+    --bg-color: #000; /* Cor de fundo padrão escura */
+    --text-color: #fff; /* Cor do texto padrão para tema escuro */
+    --border-hover-color: #e50914; /* Cor de borda de destaque ao passar o mouse */
+}
+
+body[data-theme="light"] {
+    --bg-color: #f5f5f5; /* Cor de fundo para tema claro */
+    --text-color: #000; /* Cor do texto para tema claro */
+    --border-hover-color: #221f1f; /* Cor de borda de destaque no tema claro */
+}
+
+body {
+    background: linear-gradient(to bottom, #000000, #1a1a1a); /* Degrade sutil preto para cinza escuro premium */
+    color: var(--text-color); /* Define a cor do texto */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Define a família de fontes, priorizando Helvetica Neue e fallbacks */
+    margin: 0; /* Remove a margem padrão do corpo */
+    padding: 0; /* Remove o preenchimento padrão do corpo */
+    display: flex; /* Define o layout como flexbox para centralizar o conteúdo */
+    flex-direction: column; /* Organiza itens em coluna */
+    justify-content: center; /* Centraliza horizontalmente os itens flex */
+    align-items: center; /* Centraliza verticalmente os itens flex */
+    min-height: 100vh; /* Define a altura mínima como 100% da altura da viewport */
+    transition: background 0.3s ease, color 0.3s ease; /* Adiciona transição suave para mudanças de cor */
+}
+
+main {
+    text-align: center; /* Alinha o texto ao centro */
+    max-width: 800px; /* Define a largura máxima do elemento main */
+    width: 100%; /* Define a largura como 100% para responsividade */
+    flex: 1; /* Faz o main ocupar espaço restante */
+    display: flex; /* Define o layout como flexbox */
+    flex-direction: column; /* Organiza itens em coluna */
+    justify-content: center; /* Centraliza verticalmente os itens */
+    align-items: center; /* Centraliza horizontalmente os itens */
+}
+
+h1 {
+    font-size: 3rem; /* Define o tamanho da fonte do título */
+    margin-bottom: 2rem; /* Define a margem inferior do título */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+    font-style: italic; /* Define o estilo da fonte como itálico */
+}
+
+ul {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o preenchimento padrão da lista */
+    display: flex; /* Define o layout como flexbox para os perfis */
+    justify-content: center; /* Centraliza os perfis horizontalmente */
+    gap: 1rem; /* Define o espaço entre os perfis */
+    flex-wrap: wrap; /* Permite que os perfis quebrem para a próxima linha se necessário */
+}
+
+.profile {
+    text-decoration: none; /* Remove a decoração de texto dos links */
+    color: var(--text-color); /* Define a cor do texto dos perfis */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave para transformações */
+}
+
+.profile:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do perfil no hover */
+}
+
+.add-profile {
+    background: transparent; /* Fundo transparente para o botão */
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Muda o cursor para pointer ao passar o mouse */
+}
+
+.add-profile figure {
+    display: flex; /* Define o layout como flexbox */
+    flex-direction: column; /* Organiza itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.add-profile .add-icon {
+    width: 150px; /* Define a largura do ícone */
+    height: 150px; /* Define a altura do ícone */
+    display: flex; /* Define o layout como flexbox */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    font-size: 4rem; /* Define o tamanho da fonte do ícone */
+    color: var(--text-color); /* Define a cor do texto/ícone */
+    border-radius: 50%; /* Torna o ícone circular */
+    border: 3px dashed var(--border-hover-color); /* Define uma borda tracejada */
+    margin-bottom: 0.5rem; /* Define a margem inferior */
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; /* Adiciona transições suaves */
+}
+
+.add-profile:hover .add-icon {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho no hover */
+    border-color: var(--border-hover-color); /* Muda a cor da borda no hover */
+}
+
+
+figure {
+    margin: 0; /* Remove a margem padrão da figura */
+    display: flex; /* Define o layout da figura como flexbox em coluna */
+    flex-direction: column; /* Define a direção dos itens flex como coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+img {
+    width: 150px; /* Define a largura da imagem */
+    height: 150px; /* Define a altura da imagem */
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorcer */
+    margin-bottom: 0.5rem; /* Define a margem inferior da imagem */
+    border: 3px solid transparent; /* Define uma borda transparente */
+    transition: border-color 0.3s ease; /* Adiciona transição para a cor da borda */
+}
+
+.profile:hover img {
+    border-color: var(--border-hover-color); /* Muda a cor da borda no hover */
+}
+
+figcaption {
+    font-size: 1.2rem; /* Define o tamanho da fonte da legenda */
+    font-weight: 400; /* Define o peso da fonte da legenda */
+}
+
+.theme-toggle {
+    position: fixed; /* Posiciona o botão de forma fixa */
+    top: 20px; /* Define a distância do topo */
+    right: 20px; /* Define a distância da direita */
+    background: var(--bg-color); /* Define a cor de fundo */
+    color: var(--text-color); /* Define a cor do texto */
+    border: 2px solid var(--text-color); /* Define a borda */
+    width: 50px; /* Define a largura do botão */
+    height: 50px; /* Define a altura do botão */
+    border-radius: 50%; /* Torna o botão circular */
+    font-size: 1.5rem; /* Define o tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para pointer */
+    transition: all 0.3s ease; /* Adiciona transição suave */
+    display: flex; /* Define o layout como flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão no hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra no hover */
+}
+
+.manage-profiles {
+    margin-top: 2rem; /* Define a margem superior do botão */
+    padding: 12px 40px; /* Define o preenchimento do botão */
+    font-size: 1.1rem; /* Define o tamanho da fonte */
+    font-weight: 600; /* Define o peso da fonte */
+    color: var(--text-color); /* Define a cor do texto */
+    background-color: transparent; /* Define fundo transparente */
+    border: 2px solid var(--text-color); /* Define borda */
+    border-radius: 4px; /* Define bordas arredondadas levemente */
+    cursor: pointer; /* Muda o cursor para pointer */
+    transition: all 0.3s ease; /* Adiciona transição suave */
+}
+
+.manage-profiles:hover {
+    background-color: var(--text-color); /* Muda fundo no hover */
+    color: var(--bg-color); /* Inverte a cor do texto */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem; /* Reduz o tamanho da fonte do título em telas pequenas */
+    }
+
+    .profiles {
+        gap: 1rem; /* Reduz o espaço entre os perfis em telas pequenas */
+    }
+
+    img {
+        width: 120px; /* Reduz a largura da imagem em telas pequenas */
+        height: 120px; /* Reduz a altura da imagem em telas pequenas */
+    }
+
+    .add-profile .add-icon {
+        width: 120px; /* Reduz a largura do ícone em telas pequenas */
+        height: 120px; /* Reduz a altura do ícone em telas pequenas */
+        font-size: 3rem; /* Reduz o tamanho da fonte do ícone em telas pequenas */
+    }
+}
+
+/* NETLURA Header - Container principal do logo */
+.netflix-header {
+    width: 100%; /* Faz o cabeçalho ocupar toda a largura da tela */
+    background: linear-gradient(to bottom, #000000, #1a1a1a); /* Degrade sutil para sincronia com o body */
+    padding: 20px 0; /* Espaço acima e abaixo do conteúdo do cabeçalho */
+    margin-bottom: -3rem; /* Espaço entre o cabeçalho e o conteúdo principal */
+    border-bottom: 2px solid #dc0a0a; /* Borda vermelha Netflix */
+    transition: border-color 0.3s ease; /* Anima a mudança da cor da borda */
+}
+
+body[data-theme="light"] .netflix-header {
+    border-bottom-color: #221f1f; /* Define a cor da borda quando o tema claro estiver ativo */
+}
+
+/* NETLURA Logo - Texto em estilo Netflix */
+.netflix-logo {
+    text-align: center; /* Centraliza o texto do logo */
+    font-size: 3.5rem; /* Define o tamanho grande do logo */
+    font-weight: 900; /* Peso máximo para aparência bold */
+    letter-spacing: 4px; /* Espaçamento entre letras */
+    color: #e50914; /* Vermelho Netflix */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+body[data-theme="light"] .netflix-logo {
+    color: #e50914; /* Mantém o texto em vermelho no tema claro */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra mais suave no tema claro */
+}
+
+/* Splash Screen Animation */
+.splash {
+    position: fixed; /* Posiciona fixo na tela */
+    top: 0; /* No topo */
+    left: 0; /* Na esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background-color: #000; /* Fundo preto original para a animação */
+    display: flex; /* Flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    z-index: 9999; /* Acima de tudo */
+}
+
+.splash img {
+    width: 500px; /* Largura inicial do N */
+    height: auto; /* Altura automática */
+    animation: netflixIntro 3s ease-in-out forwards; /* Animação de 3 segundos */
+}
+
+@keyframes netflixIntro {
+    0% {
+        transform: scale(0.5); /* Começa pequeno */
+        opacity: 0; /* Invisível */
+    }
+    50% {
+        transform: scale(1.2); /* Cresce um pouco */
+        opacity: 1; /* Visível */
+    }
+    100% {
+        transform: scale(1); /* Volta ao tamanho normal */
+        opacity: 1; /* Permanece visível */
+    }
+}
